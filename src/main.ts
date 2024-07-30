@@ -1,16 +1,17 @@
-import { createSSRApp } from "vue";
-import App from "./App.vue";
+import { createSSRApp } from 'vue'
+import App from './App.vue'
 
-import "./styles/index.scss";
+import '@/styles/index.scss'
 
-// i18n 国际化
-import { createI18n } from "vue-i18n";
-import { i18nOptions } from "./i18n";
+// 国际化
+import i18n from '@/i18n/index'
+
+import pinia from '@/stores/pinia'
 
 export function createApp() {
-  const app = createSSRApp(App);
-  app.use(createI18n(i18nOptions));
+  const app = createSSRApp(App)
+  app.use(i18n).use(pinia)
   return {
-    app,
-  };
+    app
+  }
 }

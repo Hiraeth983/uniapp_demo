@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   darkMode: 'class',
   content: ['./index.html', '!./src/**/__tests__/*', './src/**/*.{vue,ts,tsx}'],
   theme: {
@@ -39,9 +39,10 @@ module.exports = {
         map[index] = `${index}rpx`
         return map
       }, {}),
-      colors: {//自定义颜色
+      colors: {
+        //自定义颜色
         layout: {
-          'main': '#417eb7'
+          main: '#417eb7'
         },
         colorQianHui: '#f5f5f5',
         colorHui: '#aaabac',
@@ -49,18 +50,27 @@ module.exports = {
         colorQianLan: '#d9ecff',
         colorShenHei: '#303133'
       },
-      animation: {//自定义动画
+      animation: {
+        //自定义动画
         'icon-bounce': 'icon-bounce 3s infinite'
       },
       keyframes: {
         'icon-bounce': {
-          '0%': { transform: 'translateY(-5%)', animationTimingFunction: 'cubic - bezier(0.8, 0, 1, 1)' },
-          '50%': { transform: 'translateY(0)', animationTimingFunction: 'cubic - bezier(0, 0, 0.2, 1)' },
-          '100%': { transform: 'translateY(-5%)', animationTimingFunction: 'cubic - bezier(0.8, 0, 1, 1)' }
+          '0%': {
+            transform: 'translateY(-5%)',
+            animationTimingFunction: 'cubic - bezier(0.8, 0, 1, 1)'
+          },
+          '50%': {
+            transform: 'translateY(0)',
+            animationTimingFunction: 'cubic - bezier(0, 0, 0.2, 1)'
+          },
+          '100%': {
+            transform: 'translateY(-5%)',
+            animationTimingFunction: 'cubic - bezier(0.8, 0, 1, 1)'
+          }
         }
       }
     }
   },
   plugins: []
 }
-

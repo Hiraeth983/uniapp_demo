@@ -1,3 +1,4 @@
 export default {
-  "test": "zh_CN"
+  test: 'zh_CN',
+  hello: '你好，世界'
 }

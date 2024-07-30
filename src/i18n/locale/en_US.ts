@@ -1,3 +1,4 @@
 export default {
-  "test": "en_US"
+  test: 'en_US',
+  hello: 'Hello World'
 }

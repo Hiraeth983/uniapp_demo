@@ -3,17 +3,21 @@
     <image class="logo" src="/static/logo.png" />
     <view class="text-area">
       <text class="title">{{ title }}</text>
-      <text class="title">{{ $t('test') }}</text>
+      <text class="title">{{ $t('test') + $t('hello') }}</text>
     </view>
+    <view>{{ counter.count + counter.name }}</view>
+    <button @click="counter.increment()">+</button>
   </view>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useCounterStore } from '@/stores/counter'
 const title = ref('Hello')
 
-const { t } = useI18n()
+useI18n().locale.value = 'zh-CN'
+const counter = useCounterStore()
 </script>
 
 <style>
